@@ -1,5 +1,4 @@
 # SimpleConsole
-Using the library and write there:
 ``` C#
 using SimpleConsole;
 using SimpleConsole.Core.Actions;
