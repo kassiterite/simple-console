@@ -46,6 +46,7 @@ ch.AddConsoleAction(new ConsoleReadAction(x =>
   ach.AddConsoleAction(new ConsoleAction(toDouble, "double", "try validate to double", false));
   ach.AddConsoleAction(new ConsoleAction(toDateTime, "datetime", "try validate to datetime", false));
   ach.AddConsoleAction(exit);
-  ach.InvokeConsole();}, "validate", "validate number convert to type", false));
+  ach.InvokeConsole();
+  }, "validate", "validate number convert to type", false));
 ch.InvokeConsole();
 ```
