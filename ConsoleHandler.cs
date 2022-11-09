@@ -1,5 +1,4 @@
-﻿using SimpleConsole.Core.Actions;
-using SimpleConsole.Core.Extensions;
+﻿using SimpleConsole.Core.Extensions;
 
 namespace SimpleConsole
 {
@@ -49,16 +48,13 @@ namespace SimpleConsole
             while (!isWayOut)
             {
                 string input = Console.ReadLine();
-                Console.Clear();
+
                 foreach (var consoleAction in consoleActions)
                     if (consoleAction.Name == input)
                     {
-                        if (consoleAction.IsExit)
-                            isWayOut = true;
-                        if (consoleAction is ConsoleAction ca)
-                            ca.Action.Invoke();
-                        if (consoleAction is ConsoleReadAction cra)
-                            cra.Action.Invoke(Console.ReadLine());
+                        consoleAction.IsExit.CompleteIfTrue(() => isWayOut = true);
+                        (consoleAction is ConsoleAction).CompleteIfTrue(() => ((ConsoleAction)consoleAction).Action.Invoke());
+                        (consoleAction is ConsoleReadAction).CompleteIfTrue(() => ((ConsoleReadAction)consoleAction).Action.Invoke(Console.ReadLine()));
                     }
                 if (!consoleActions.Any(x => x.Name == input))
                 {

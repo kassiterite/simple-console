@@ -1,4 +1,4 @@
-﻿namespace SimpleConsole.Core.Actions
+﻿namespace SimpleConsole
 {
     public class ConsoleAction : IConsoleAction
     {
@@ -8,10 +8,10 @@
         public bool IsExit { get; }
         public ConsoleAction(Action action, string name, string description, bool isExit)
         {
-            this.Action = action;
-            this.Name = name;
-            this.Description = description;
-            this.IsExit = isExit;
+            Action = action;
+            Name = name;
+            Description = description;
+            IsExit = isExit;
         }
     }
 }

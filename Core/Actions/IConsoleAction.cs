@@ -1,4 +1,4 @@
-﻿namespace SimpleConsole.Core.Actions
+﻿namespace SimpleConsole
 {
     public interface IConsoleAction
     {

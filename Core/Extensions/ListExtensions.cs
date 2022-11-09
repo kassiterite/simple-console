@@ -1,6 +1,4 @@
-﻿using SimpleConsole.Core.Actions;
-
-namespace SimpleConsole.Core.Extensions
+﻿namespace SimpleConsole.Core.Extensions
 {
     public static class ListExtensions
     {
